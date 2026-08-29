@@ -1,0 +1,38 @@
+@baseUrl = http://localhost:8080
+
+### All books
+GET {{baseUrl}}/books
+
+### 1 Book
+GET {{baseUrl}}/books/2
+
+
+### Book not found
+GET {{baseUrl}}/books/999
+
+### Add book
+POST {{baseUrl}}/books
+Content-Type: application/json
+
+{
+  "isbn": "99983709879808",
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "publisher": "Prentice Hall",
+  "type": "programming"
+}
+
+### Update book
+PUT {{baseUrl}}/books/2
+Content-Type: application/json
+
+{
+  "isbn": "1111111111111111",
+  "title": "Effective Java UPDATED",
+  "author": "Joshua Block",
+  "publisher": "Addison-Wesley",
+  "type": "programming"
+}
+
+### Delete book
+DELETE {{baseUrl}}/books/2
